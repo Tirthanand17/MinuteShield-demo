@@ -1,0 +1,11 @@
+name: Expensive example fixture
+
+on:
+  pull_request:
+
+jobs:
+  expensive-example:
+    if: ${{ false }}
+    runs-on: macos-latest
+    steps:
+      - run: echo "MinuteShield v0.1.1 accuracy fixture"
