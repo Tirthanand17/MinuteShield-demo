@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Check GitHub Actions cost regression
-        uses: Tirthanand17/MinuteShield@v0.1.0
+        uses: Tirthanand17/MinuteShield@v0.1.1
         with:
           github-token: ${{ github.token }}
           comment: 'true'
