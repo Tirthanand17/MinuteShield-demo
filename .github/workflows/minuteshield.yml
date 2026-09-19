@@ -1,0 +1,28 @@
+name: MinuteShield
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/*.yml'
+      - '.github/workflows/*.yaml'
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: write
+
+concurrency:
+  group: minuteshield-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  cost-guard:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - name: Check GitHub Actions cost regression
+        uses: Tirthanand17/MinuteShield@v0.1.0
+        with:
+          github-token: ${{ github.token }}
+          comment: 'true'
+          fail-on-policy: 'true'
