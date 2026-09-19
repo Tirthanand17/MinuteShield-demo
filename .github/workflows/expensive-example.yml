@@ -1,0 +1,14 @@
+name: Expensive example fixture
+
+on:
+  pull_request:
+
+jobs:
+  expensive-example:
+    if: ${{ false }}
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - run: echo "This fixture is intentionally skipped at runtime."
