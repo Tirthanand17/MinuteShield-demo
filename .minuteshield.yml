@@ -1,0 +1,6 @@
+warnMonthlyDeltaUsd: 10
+failMonthlyDeltaUsd: 500
+requireTimeoutMinutes: true
+requireConcurrencyCancel: true
+warnOnMacos: true
+comment: true
